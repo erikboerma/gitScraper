@@ -1,0 +1,10 @@
+.row {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .col {
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
+  }
