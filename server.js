@@ -33,7 +33,7 @@ app.get('/', function(req,res){
     res.render('index')
 });
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://user1:password1@ds157923.mlab.com:57923/heroku_bsbbfqkv";
 
 // Connect to the Mongo DB
 mongoose.connect(MONGODB_URI);

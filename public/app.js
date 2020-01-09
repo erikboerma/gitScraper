@@ -82,5 +82,5 @@ const scrape = () => {
   });
   
 
-  // on click events:
+  // // on click events:
   $('#scrape').on('click', scrape);
