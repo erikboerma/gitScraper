@@ -8,3 +8,21 @@
     justify-content: center;
     width: 50%;
   }
+
+  #notes {
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+  }
+
+  #articleRow {
+    width: 100%;
+    height: 50px;
+    background-color: lightgray;
+    border-bottom: 1px solid black;
+  }
+
+  .rowNav{
+    
+    justify-content: left;
+  }
