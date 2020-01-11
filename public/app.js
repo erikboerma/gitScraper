@@ -1,4 +1,4 @@
-import { response } from "express";
+// import { response } from "express";
 
 // Grab the articles as a json
 
@@ -12,7 +12,7 @@ import { response } from "express";
 
 
   function scrape(){
-  $.get("/scrape").then(data)
+  $.get("/scrape").then()
 
     $.getJSON("/articles", function (data) {
       // For each one
@@ -22,10 +22,10 @@ import { response } from "express";
 
       }
     });
-    // data.render(response);
+    // return(data);
 };
 
-  $(document).on("click", function () {
+  $(document).on("click", "#scrape", function () {
     scrape();
     });
 
