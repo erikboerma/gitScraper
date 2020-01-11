@@ -29,16 +29,16 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
 
-app.get('/', function (req, res) {
-  res.render('index')
-});
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://user1:password1@ds261648.mlab.com:61648/heroku_cc280v1l";
 
 // Connect to the Mongo DB
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true}, { useUnifiedTopology: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Routes
+  app.get('/', function (req, res) {
+    res.render('index')
+  });
 
 // A GET route for scraping the echoJS website
 

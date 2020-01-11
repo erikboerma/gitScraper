@@ -6,32 +6,41 @@
 // const scrape = () => {
 //     $.get("/scrape")
 //     .then((data) => {
-  //       // console.log(data);
-  //         $("body").html(data);
-  //     });
+//       // console.log(data);
+//         $("body").html(data);
+//     });
 
 
-  function scrape(){
-  $.get("/scrape").then()
+function getArticles() {
+  $.getJSON("/articles", function (data1) {
+    // For each one
+    for (var i = 0; i < data1.length; i++) {
+      // Display the apropos information on the page
+      $("#articles").append("<p data-id='" + data1[i]._id + "'>" + data1[i].title + "<br />" + data1[i].link + "</p>");
 
-    $.getJSON("/articles", function (data) {
-      // For each one
-      for (var i = 0; i < data.length; i++) {
-        // Display the apropos information on the page
-        $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+    }
+  });
 
-      }
-    });
-    // return(data);
+}
+
+function scrape() {
+  $.get("/scrape").then(data => {
+    console.log("scraped");
+    getArticles();
+
+  }).catch(err => console.log(err))
+
+
+
 };
 
-  $(document).on("click", "#scrape", function () {
-    scrape();
-    });
+$(document).on("click", "#scrape", function () {
+  scrape();
+});
 
 
-  // Whenever someone clicks a p tag
-  $(document).on("click", "p", function () {
+// Whenever someone clicks a p tag
+$(document).on("click", "p", function () {
   // Empty the notes from the note section
   $("#notes").empty();
   // Save the id from the p tag
@@ -95,4 +104,4 @@ $(document).on("click", "#savenote", function () {
 
 
 // // on click events:
-$('#scrape').on('click', scrape);
+// $('#scrape').on('click', scrape);
