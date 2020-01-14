@@ -1,15 +1,3 @@
-// import { response } from "express";
-
-// Grab the articles as a json
-
-
-// const scrape = () => {
-//     $.get("/scrape")
-//     .then((data) => {
-//       // console.log(data);
-//         $("body").html(data);
-//     });
-
 
 function getArticles() {
   $.getJSON("/articles", function (data1) {
